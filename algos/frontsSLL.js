@@ -40,6 +40,16 @@ class SLL{
             runner = runner.next;
         }
     }
+    listLength(){
+        let runner = this.head;
+        let len = 0;
+        while(runner){
+            len++;
+            runner = runner.next;
+        }
+        console.log(len)
+        return this;
+    }
     display(){
         if(!this.head || this.length === 0){
             return null;
@@ -55,8 +65,9 @@ class SLL{
 
 
 sll1 = new SLL(25).addFront(20).addFront(15).addFront(10).removeFront().addFront(150).getFront()
-sll1.display()
+sll1.display();
 
 sll1.contains(20);
 sll1.contains(10);
 
+sll1.listLength();

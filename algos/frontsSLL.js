@@ -73,6 +73,28 @@ class SLL{
         console.log(maxMinAvgObj);
         return this;
     }
+    removeBack(){
+        let runner = this.head;
+        let end = runner;
+        while(runner.next){
+            end = runner;
+            runner = runner.next;
+        }
+        this.tail = end;
+        this.tail.next = null;
+        return this;
+    }
+    addBack(value){
+        let runner = this.head;
+        while(runner){
+            if(runner.next == null){
+                runner.next = new Node(value);
+                return this;
+            }
+            runner = runner.next;
+        }
+        return this;
+    }
     display(){
         if(!this.head || this.length === 0){
             return null;
@@ -97,3 +119,9 @@ sll1.contains(10);
 
 sll1.listLength();
 sll1.maxMinAvg();
+
+sll1.removeBack();
+sll1.display();
+
+sll1.addBack(275);
+sll1.display();

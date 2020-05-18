@@ -54,9 +54,11 @@ class SLL{
         if(!this.head || this.length === 0){
             return null;
         }
+        let count = 0
         let runner = this.head;
         while(runner){
-            console.log(runner.value);
+            count++;
+            console.log(`Current Node ${count} contains ${runner.value} and the next Node is ${runner.next}`);
             runner = runner.next;
         }
         return this;

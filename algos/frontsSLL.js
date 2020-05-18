@@ -1,9 +1,9 @@
-// class Node{
-//     constructor(value){
-//         this.value = value;
-//         this.next = null;
-//     }
-// }
+class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
 
 class SLL{
     constructor(value){
@@ -30,6 +30,16 @@ class SLL{
         console.log("Front:", this.head.value)
         return this;
     }
+    contains(value){
+        let runner = this.head;
+        while(runner){
+            if(value == runner.value){
+                console.log(`Found ${runner.value}`)
+                return this;
+            }
+            runner = runner.next;
+        }
+    }
     display(){
         if(!this.head || this.length === 0){
             return null;
@@ -47,7 +57,6 @@ class SLL{
 sll1 = new SLL(25).addFront(20).addFront(15).addFront(10).removeFront().addFront(150).getFront()
 sll1.display()
 
-//test if no head
-sll2 = new SLL(25).removeFront()
-sll2.getFront()
-sll2.display()
+sll1.contains(20);
+sll1.contains(10);
+

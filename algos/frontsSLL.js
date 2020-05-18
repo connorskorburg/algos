@@ -50,6 +50,29 @@ class SLL{
         console.log(len)
         return this;
     }
+    maxMinAvg(){
+        let runner = this.head;
+        let count = 0;
+        let maxMinAvgObj = {
+            'min': this.head.value,
+            'max': this.head.value,
+            'avg': 0,
+        };
+        while(runner){
+            count++;
+            if(runner.value < maxMinAvgObj['min']){
+                maxMinAvgObj['min'] = runner.value;
+            }
+            if(runner.value > maxMinAvgObj['max']){
+                maxMinAvgObj['max'] = runner.value;
+            }
+            maxMinAvgObj['avg'] += runner.value;
+            runner = runner.next;
+        }
+        maxMinAvgObj['avg'] = maxMinAvgObj['avg'] / count;
+        console.log(maxMinAvgObj);
+        return this;
+    }
     display(){
         if(!this.head || this.length === 0){
             return null;
@@ -73,3 +96,4 @@ sll1.contains(20);
 sll1.contains(10);
 
 sll1.listLength();
+sll1.maxMinAvg();
